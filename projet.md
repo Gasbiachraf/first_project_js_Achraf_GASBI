@@ -39,10 +39,10 @@
             - Do not save the Age if it has 0 characters, or if it has 3 characters or more.
 
             # Password:
-            - Check for leading or trailing spaces.
-            - Do not save the Password if it has spaces in the middle.
-            - Require at least one special character from the set: ["@", "#", "-", "+", "*", "/"].
-            - Require at least 7 characters to confirm the password.
+            - Check for leading or trailing spaces.  (done)
+            - Do not save the Password if it has spaces in the middle. (done)
+            - Require at least one special character from the set: ["@", "#", "-", "+", "*", "/"]. (done)
+            - Require at least 7 characters to confirm the password.(done)
 
             # Password_confirmed:
             - The user must re-enter their exact password; otherwise, they are blocked.

@@ -65,7 +65,7 @@
 
 // let Age = prompt(`enter your age`) ;
 // while (true) {
-//     let arrAge = Age.trim().split("")
+//     let arrAge = Age.split("")
 //     let checkAge = arrAge.filter(element => element == ' ')
 //     if (checkAge.length<1 && Age < 100 &&  parseInt(Age) != NaN && Age != "") {
 //         console.log(parseInt(Age));
@@ -76,7 +76,18 @@
 // }
 
 //^  password  :
-
+let pasword = prompt(`enter your pasword`) ;
+while (true) {
+    let arrpasword = pasword.split("") ;
+    let checkpasword = arrpasword.filter(element => element == ' ')
+    let checkPwSpecar = arrpasword.filter(element => (element == "@") || (element == "#") || (element == "-" )|| (element == "+") || (element == "*" )|| (element == "/"))
+    if (checkpasword.length<1  && pasword != "" && pasword.length > 7 && checkPwSpecar.length>0) {
+        console.log(pasword);
+        break
+    }else{
+        pasword = prompt(`your pasword is not corect ! enter your pasword`) ;
+    }
+}
 
 
 
