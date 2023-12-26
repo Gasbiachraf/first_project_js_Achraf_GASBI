@@ -14,7 +14,9 @@
 
 ## 3 - Instructions:
 - Account Creation and Management:
+
     + Allow the user, via prompts, to choose between signing up, logging in, or changing the password.
+
     + If the user only writes "exit," they exit the current process, and the choice question is asked again.
         * If the user chooses to sign up, here are the details they must enter:
             # Name (Full):
@@ -36,7 +38,7 @@
             # Age:
             - Check for leading, trailing, or middle spaces. (done)
             - Verify that only digits are entered.(done)
-            - Do not save the Age if it has 0 characters, or if it has 3 characters or more.
+            - Do not save the Age if it has 0 characters, or if it has 3 characters or more. (done)
 
             # Password:
             - Check for leading or trailing spaces.  (done)
