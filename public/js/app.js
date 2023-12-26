@@ -35,31 +35,48 @@
 
 
 //^ Email :
-let askEmail = prompt(`enter your email`);
+// let askEmail = prompt(`enter your email`);
 
-while (true) {
-    let deletespaceEmail = askEmail.trim();
-    let arrEmail = deletespaceEmail.split("");
-    let checkemail = arrEmail.filter(element => element == ' ')
-    let checkarobase = arrEmail.filter(element2 => element2 == '@')
-    if (checkarobase.length == 1) {
-        if (checkemail.length < 1) {
-            if (deletespaceEmail.length >= 10) {
-                let userEmail = deletespaceEmail.toLowerCase()
-                console.log(userEmail);
-                break
-            } else {
-                askEmail = prompt(`the email verry small enter your email again`);
-            }
-        } else {
-            askEmail = prompt('your email has spaces in the middle ! enter your email')
-        }
-    } else if (checkarobase.length > 1) {
-        askEmail = prompt('your email contain more "@" ! enter your email')
-    } else {
-        askEmail = prompt('your Email  does not contain exactly one "@" ! enter your email')
-    }
-}
+// while (true) {
+//     let deletespaceEmail = askEmail.trim();
+//     let arrEmail = deletespaceEmail.split("");
+//     let checkemail = arrEmail.filter(element => element == ' ')
+//     let checkarobase = arrEmail.filter(element2 => element2 == '@')
+//     if (checkarobase.length == 1) {
+//         if (checkemail.length < 1) {
+//             if (deletespaceEmail.length >= 10) {
+//                 let userEmail = deletespaceEmail.toLowerCase()
+//                 console.log(userEmail);
+//                 break
+//             } else {
+//                 askEmail = prompt(`the email verry small enter your email again`);
+//             }
+//         } else {
+//             askEmail = prompt('your email has spaces in the middle ! enter your email')
+//         }
+//     } else if (checkarobase.length > 1) {
+//         askEmail = prompt('your email contain more "@" ! enter your email')
+//     } else {
+//         askEmail = prompt('your Email  does not contain exactly one "@" ! enter your email')
+//     }
+// }
+
+//^  Age  :
+
+// let Age = prompt(`enter your age`) ;
+// while (true) {
+//     let arrAge = Age.trim().split("")
+//     let checkAge = arrAge.filter(element => element == ' ')
+//     if (checkAge.length<1 && Age < 100 &&  parseInt(Age) != NaN && Age != "") {
+//         console.log(parseInt(Age));
+//         break
+//     }else{
+//         Age = prompt(`your age is not corect ! enter your age`) ;
+//     }
+// }
+
+//^  password  :
+
 
 
 

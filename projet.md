@@ -34,8 +34,8 @@
             - Ensure the email is unique. 
 
             # Age:
-            - Check for leading, trailing, or middle spaces.
-            - Verify that only digits are entered.
+            - Check for leading, trailing, or middle spaces. (done)
+            - Verify that only digits are entered.(done)
             - Do not save the Age if it has 0 characters, or if it has 3 characters or more.
 
             # Password:
