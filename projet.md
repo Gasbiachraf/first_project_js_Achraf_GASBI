@@ -18,20 +18,20 @@
     + If the user only writes "exit," they exit the current process, and the choice question is asked again.
         * If the user chooses to sign up, here are the details they must enter:
             # Name (Full):
-            - Check for leading or trailing spaces.
-            - The first letter should be capitalized.
-            - After each space, the first letter should remain capitalized.
-            - Check that all other characters are in lowercase.
-            - Do not save the Name if it has less than 5 characters (excluding spaces).
-            - Do not save the Name if it contains numbers, "@", or similar special characters.
+            - Check for leading or trailing spaces. (done)
+            - The first letter should be capitalized. (done)
+            - After each space, the first letter should remain capitalized. (done)
+            - Check that all other characters are in lowercase. (done)
+            - Do not save the Name if it has less than 5 characters (excluding spaces). (done)
+            - Do not save the Name if it contains numbers, "@", or similar special characters. (done)
 
             # Email:
-            - Check for leading or trailing spaces.
-            - Convert all letters to lowercase.
-            - Do not save the Email if it has spaces in the middle.
-            - Do not save the Email if it has fewer than 10 characters (excluding spaces).
-            - Do not save the Email if it does not contain exactly one "@" symbol.
-            - Ensure the email is unique.
+            - Check for leading or trailing spaces. (done)
+            - Convert all letters to lowercase. (done)
+            - Do not save the Email if it has spaces in the middle. (done)
+            - Do not save the Email if it has fewer than 10 characters (excluding spaces). (done)
+            - Do not save the Email if it does not contain exactly one "@" symbol.(done)
+            - Ensure the email is unique. 
 
             # Age:
             - Check for leading, trailing, or middle spaces.
