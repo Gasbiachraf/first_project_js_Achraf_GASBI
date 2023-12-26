@@ -1,15 +1,16 @@
 let Database = [];
 
 class User {
-    constructor(userName, userEmail, userAge, userPassword) {
+    constructor(userName, userEmail, userAge, userPassword , usermoney) {
         this.userName = userName;
         this.userEmail = userEmail;
         this.userAge = userAge;
         this.userPassword = userPassword;
+        this.usermoney = usermoney;
     }
 }
 
-let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@');
+let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@' , 200);
 Database.push(oussama)
 console.log(Database);
 
@@ -111,14 +112,13 @@ while (true) {
             let confermepasword = prompt(`conferme your password`);
             if (pasword == confermepasword) {
                 console.log(`you are done`);
-                let achraf = new User(Usname, UsEmail, UsAge, pasword);
+                let achraf = new User(Usname, UsEmail, UsAge, pasword , 300);
                 Database.push(achraf);
                 console.log(Database);
                 break
             } else {
                 console.log(`try again`);
             }
-
         }
     } else if (userChoose == 'log-in') {
         let loginEmail = prompt(`enter your email`);
@@ -126,7 +126,13 @@ while (true) {
         while (true) {
             let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
             if (checkLoginEmail.length>0 && checkLoginEmail[0].userPassword == loginpassword) {
-                console.log(`welcome`);
+                console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
+                let logout = prompt(`your choices dear ${checkLoginEmail[0].userName}  : logout , withdraw-money , deposit-money , take-a-loan , invest, history`)
+                while (true) {
+                    if (logout == 'logout') {
+                        break
+                    }
+                }
                 break
             } else {
                 loginEmail = prompt(`email or password incorect try again ! enter your email`);
@@ -166,23 +172,8 @@ while (true) {
                 loginpassword = prompt(`enter your password`);
             }
         }
-
-
-    // } else if (userChoose == 'exit') {
-    //     userChoose = prompt(` Choose one of the good things  : sign-up, log-in or change-password`);
     } else {
         userChoose = prompt(` Choose one of the good things  : sign-up, log-in or change-password`);
-
     }
+    break
 }
-
-
-
-
-
-// let achraf = new User( askName , askEmail , Age , pasword );
-// Database.push(achraf);
-// console.log(Database);
-
-
-

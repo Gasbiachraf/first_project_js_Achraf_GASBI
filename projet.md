@@ -61,7 +61,7 @@
 
         * After the user logs in, display the amount they have in their bank (user's choice) and offer them services:
             # Logout:
-            - If the user chooses this option, they are logged out and offered the option, as at the beginning, to sign up, log in, or change the password.
+            - If the user chooses this option, they are logged out and offered the option, as at the beginning, to sign up, log in, or change the password. (done)
             
             # Withdraw Money:
             - If the user chooses this option, they can withdraw an amount from their bank (not exceeding the available amount).
