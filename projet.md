@@ -47,14 +47,14 @@
             - Require at least 7 characters to confirm the password.(done)
 
             # Password_confirmed:
-            - The user must re-enter their exact password; otherwise, they are blocked.
+            - The user must re-enter their exact password; otherwise, they are blocked. (done)
 
         * If the user chooses to log in, here are the details they must enter:
             # Email:
-            - Check if the email exists in our Database.
+            - Check if the email exists in our Database. (done)
             
             # Password:
-            - Check if the entered password is associated with the previously entered email.
+            - Check if the entered password is associated with the previously entered email. (done) 
 
         * If the user chooses to change the password:
             - They must enter their existing Email in the Database.

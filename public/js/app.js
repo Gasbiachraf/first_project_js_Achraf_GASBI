@@ -10,16 +10,14 @@ class User {
 }
 
 let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@');
-// let achraf = new User('' , '' , 0 , '') ;
 Database.push(oussama)
-// Database.push(achraf) 
 console.log(Database);
 
 
 
 
 while (true) {
-    let userChoose = prompt(`hello dear user what do you want : sign-up, log-in or change-password`)
+    let userChoose = prompt(`hello dear user what do you want : sign-up, log-in or changing-password`)
 
     if (userChoose == 'sign-up') {
         while (true) {
@@ -44,6 +42,7 @@ while (true) {
                             i++
                         });
                         var Usname = arrName.join(` `);
+                        console.log(Usname);
                         break
                     } else {
                         askName = prompt(`the name verry small enter your fullname`);
@@ -65,6 +64,7 @@ while (true) {
                         if (checkemail.length < 1) {
                             if (deletespaceEmail.length >= 10) {
                                 var UsEmail = deletespaceEmail.toLowerCase()
+                                console.log(UsEmail);
                                 break
                             } else {
                                 askEmail = prompt(`the email verry small enter your email again`);
@@ -120,28 +120,56 @@ while (true) {
             }
 
         }
-
     } else if (userChoose == 'log-in') {
         let loginEmail = prompt(`enter your email`);
         let loginpassword = prompt(`enter your password`);
         while (true) {
             let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
-            let checkLoginpassword = Database.filter(element => element.userPassword == loginpassword)
-            if (checkLoginEmail.length>0 && checkLoginpassword.length>0 ) {
+            if (checkLoginEmail.length>0 && checkLoginEmail[0].userPassword == loginpassword) {
                 console.log(`welcome`);
                 break
             } else {
                 loginEmail = prompt(`email or password incorect try again ! enter your email`);
                 loginpassword = prompt(`enter your password`);
-
             }
-
         }
-    } else if (userChoose == 'change-password') {
+    } else if (userChoose == 'changing-password') {
+        let loginEmail = prompt(`enter your email`);
+        let loginpassword = prompt(`enter your  password`);
+        while (true) {
+            let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
+            if (checkLoginEmail.length>0 && checkLoginEmail[0].userPassword == loginpassword) {
+                console.log(`change your password`);
+                let pasword = prompt(`enter your new password`);
+                while (true) {
+                    let arrpasword = pasword.split("");
+                    let checkpasword = arrpasword.filter(element => element == ' ')
+                    let checkPwSpecar = arrpasword.filter(element => (element == "@") || (element == "#") || (element == "-") || (element == "+") || (element == "*") || (element == "/"))
+                    if (checkpasword.length < 1 && pasword != "" && pasword.length > 7 && checkPwSpecar.length > 0) {
+                        console.log(pasword);
+                        break
+                    } else {
+                        pasword = prompt(`your new password is not corect ! enter your pasword`);
+                    }
+                }
+                //^  conferme new password  :
+                let confermepasword = prompt(`conferme your new password`);
+                if (pasword == confermepasword) {
+                    console.log(`you are done`);
+                    checkLoginEmail[0].userPassword = pasword ;
+                } else {
+                    console.log(`try again`);
+                }
+                break
+            } else {
+                loginEmail = prompt(`email or password incorect try again ! enter your email`);
+                loginpassword = prompt(`enter your password`);
+            }
+        }
 
 
-    } else if (userChoose == 'exit') {
-        userChoose = prompt(` Choose one of the good things  : sign-up, log-in or change-password`);
+    // } else if (userChoose == 'exit') {
+    //     userChoose = prompt(` Choose one of the good things  : sign-up, log-in or change-password`);
     } else {
         userChoose = prompt(` Choose one of the good things  : sign-up, log-in or change-password`);
 
