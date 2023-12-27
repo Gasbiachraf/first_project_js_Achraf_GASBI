@@ -30,6 +30,13 @@ class User {
             console.log(`dakhl ra9m sa7i7 `);
         }
     }
+    takeALoan(){
+
+    }
+    invest(){
+        
+    }
+
 }
 
 let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@', 200);
@@ -145,6 +152,7 @@ while (true) {
     } else if (userChoose == 'log-in') {
         let loginEmail = prompt(`enter your email`);
         let loginpassword = prompt(`enter your password`);
+        let Nbrout = 0 ;
         while (true) {
             let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
             if (checkLoginEmail.length > 0 && checkLoginEmail[0].userPassword == loginpassword) {
@@ -152,6 +160,7 @@ while (true) {
                 let logout = prompt(`your choices dear ${checkLoginEmail[0].userName}  : logout , withdraw-money , deposit-money , take-a-loan , invest, history`)
                 while (true) {
                     if (logout == 'logout') {
+                        Nbrout++ ;
                         break
                     } else if (logout == 'withdraw-money') {
                         let moneyout = prompt(`ch7al baghi dial lflous`);
@@ -162,6 +171,12 @@ while (true) {
                         let moneyin = prompt(`ch7al baghi dakhl lflous`);
                         oussama.depositMoney(moneyin);
                         console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
+                        break
+                    }else if (logout == 'take-a-loan') {
+
+                        break
+                    }else if (logout == 'invest') {
+                        
                         break
                     }
                 }
@@ -206,5 +221,4 @@ while (true) {
     } else {
         userChoose = prompt(` Choose one of the good things  : sign-up, log-in or change-password`);
     }
-    break
 }
