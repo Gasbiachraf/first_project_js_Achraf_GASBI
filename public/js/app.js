@@ -8,6 +8,17 @@ class User {
         this.userPassword = userPassword;
         this.usermoney = usermoney;
     }
+    withdrawMoney (money){
+        if (money!=NaN) {
+            if (money< this.usermoney) {
+                this.usermoney -= money ;
+            }else{
+                console.log(`la youjado hada ra9m fi hisabikom ya hayawan !`);
+            }
+        }else{
+            console.log(`dakhl ra9m sa7i7 ya hayawan r lwehda delil hadi`);
+        }
+    }
 }
 
 let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@' , 200);
@@ -131,9 +142,13 @@ while (true) {
                 while (true) {
                     if (logout == 'logout') {
                         break
+                    }else if (logout == 'withdraw-money') {
+                        let moneyout = prompt(`ch7al baghi dial lflous`) ;
+                        oussama.withdrawMoney(moneyout) ;
+                        console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
+                        break
                     }
                 }
-                break
             } else {
                 loginEmail = prompt(`email or password incorect try again ! enter your email`);
                 loginpassword = prompt(`enter your password`);
