@@ -1,27 +1,38 @@
 let Database = [];
 
 class User {
-    constructor(userName, userEmail, userAge, userPassword , usermoney) {
+    constructor(userName, userEmail, userAge, userPassword, usermoney) {
         this.userName = userName;
         this.userEmail = userEmail;
         this.userAge = userAge;
         this.userPassword = userPassword;
         this.usermoney = usermoney;
     }
-    withdrawMoney (money){
-        if (money!=NaN) {
-            if (money< this.usermoney) {
-                this.usermoney -= money ;
-            }else{
+    withdrawMoney(money) {
+        if (money != NaN) {
+            if (money < this.usermoney) {
+                this.usermoney -= money;
+            } else {
                 console.log(`la youjado hada ra9m fi hisabikom ya hayawan !`);
             }
-        }else{
+        } else {
             console.log(`dakhl ra9m sa7i7 ya hayawan r lwehda delil hadi`);
+        }
+    }
+    depositMoney(money) {
+        if (money != NaN) {
+            if (money < 1000) {
+                this.usermoney += money;
+            } else {
+                console.log(`dakhl ra9m sa7i7 a9al men 1000`);
+            }
+        } else {
+            console.log(`dakhl ra9m sa7i7 `);
         }
     }
 }
 
-let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@' , 200);
+let oussama = new User('oussama', 'oussama@gmail.com', 25, 'oussama@', 200);
 Database.push(oussama)
 console.log(Database);
 
@@ -123,7 +134,7 @@ while (true) {
             let confermepasword = prompt(`conferme your password`);
             if (pasword == confermepasword) {
                 console.log(`you are done`);
-                let achraf = new User(Usname, UsEmail, UsAge, pasword , 300);
+                let achraf = new User(Usname, UsEmail, UsAge, pasword, 300);
                 Database.push(achraf);
                 console.log(Database);
                 break
@@ -136,15 +147,20 @@ while (true) {
         let loginpassword = prompt(`enter your password`);
         while (true) {
             let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
-            if (checkLoginEmail.length>0 && checkLoginEmail[0].userPassword == loginpassword) {
+            if (checkLoginEmail.length > 0 && checkLoginEmail[0].userPassword == loginpassword) {
                 console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
                 let logout = prompt(`your choices dear ${checkLoginEmail[0].userName}  : logout , withdraw-money , deposit-money , take-a-loan , invest, history`)
                 while (true) {
                     if (logout == 'logout') {
                         break
-                    }else if (logout == 'withdraw-money') {
-                        let moneyout = prompt(`ch7al baghi dial lflous`) ;
-                        oussama.withdrawMoney(moneyout) ;
+                    } else if (logout == 'withdraw-money') {
+                        let moneyout = prompt(`ch7al baghi dial lflous`);
+                        oussama.withdrawMoney(moneyout);
+                        console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
+                        break
+                    }else if (logout == 'deposit-money') {
+                        let moneyin = prompt(`ch7al baghi dakhl lflous`);
+                        oussama.depositMoney(moneyin);
                         console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
                         break
                     }
@@ -159,7 +175,7 @@ while (true) {
         let loginpassword = prompt(`enter your  password`);
         while (true) {
             let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
-            if (checkLoginEmail.length>0 && checkLoginEmail[0].userPassword == loginpassword) {
+            if (checkLoginEmail.length > 0 && checkLoginEmail[0].userPassword == loginpassword) {
                 console.log(`change your password`);
                 let pasword = prompt(`enter your new password`);
                 while (true) {
@@ -177,7 +193,7 @@ while (true) {
                 let confermepasword = prompt(`conferme your new password`);
                 if (pasword == confermepasword) {
                     console.log(`you are done`);
-                    checkLoginEmail[0].userPassword = pasword ;
+                    checkLoginEmail[0].userPassword = pasword;
                 } else {
                     console.log(`try again`);
                 }
