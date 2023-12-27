@@ -157,19 +157,19 @@ while (true) {
             let checkLoginEmail = Database.filter(element => element.userEmail == loginEmail)
             if (checkLoginEmail.length > 0 && checkLoginEmail[0].userPassword == loginpassword) {
                 console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
-                let logout = prompt(`your choices dear ${checkLoginEmail[0].userName}  : logout , withdraw-money , deposit-money , take-a-loan , invest, history`)
+                let logout = prompt(`your choices dear ${checkLoginEmail[10].userName}  : logout , withdraw-money , deposit-money , take-a-loan , invest, history`)
                 while (true) {
                     if (logout == 'logout') {
                         Nbrout++ ;
                         break
                     } else if (logout == 'withdraw-money') {
                         let moneyout = prompt(`ch7al baghi dial lflous`);
-                        oussama.withdrawMoney(moneyout);
+                        achraf.withdrawMoney(moneyout);
                         console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
                         break
                     }else if (logout == 'deposit-money') {
                         let moneyin = prompt(`ch7al baghi dakhl lflous`);
-                        oussama.depositMoney(moneyin);
+                        achraf.depositMoney(moneyin);
                         console.log(`welcome ${checkLoginEmail[0].userName} you have a ${checkLoginEmail[0].usermoney} Dhs (MAD)`);
                         break
                     }else if (logout == 'take-a-loan') {
